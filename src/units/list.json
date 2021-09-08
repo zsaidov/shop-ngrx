@@ -1,0 +1,85 @@
+[
+    {
+        "index": 0,
+        "type": "compliance",
+        "items": [
+            {
+                "question": "Истиқлолияти ҶТ",
+                "answer": "1991"
+            },
+            {
+                "question": "Коститутсияи ҶТ қабул шуд",
+                "answer": "1994"
+            },
+            {
+                "question": "Ҷумҳурии шуравии сотсиалистии Тоҷикистон",
+                "answer": "1929"
+            },
+            {
+                "question": "Covid-19",
+                "answer": "2019"
+            }
+        ]
+    },
+    {
+        "type": "true-or-false",
+        "index": 0,
+        "question": "Исмоили Сомонӣ соли 873 ба дунё омадааст?",
+        "answers": [
+            {
+                "text": "Ҳа",
+                "isCorrect": false
+            },
+            {
+                "text": "Не",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "type": "four-square",
+        "index": 0,
+        "question": "Монандӣ дар байни шабпарак ва фил кадом аст?",
+        "answers": [
+            {
+                "text": "Гӯшҳои фил ба монанди болҳои шабпарак",
+                "isCorrect": false
+            },
+            {
+                "text": "Суръати ҳаракаташон якхела аст",
+                "isCorrect": false
+            },
+            {
+                "text": "Онҳо ҳайвонот мебошанд",
+                "isCorrect": true
+            },
+            {
+                "text": "Монанд нест",
+                "isCorrect": false
+            }
+        ]
+    },
+    {
+        "type": "multiple-select",
+        "index": 0,
+        "question": "Монандӣ дар байни шабпарак ва фил кадом аст?",
+        "answers": [
+            {
+                "text": "Гӯшҳои фил ба монанди болҳои шабпарак",
+                "isCorrect": true
+            },
+            {
+                "text": "Суръати ҳаракаташон якхела аст",
+                "isCorrect": false
+            },
+            {
+                "text": "Онҳо ҳайвонот мебошанд",
+                "isCorrect": true
+            },
+            {
+                "text": "Монанд нест",
+                "isCorrect": false
+            }
+        ]
+    }
+]

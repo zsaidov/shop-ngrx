@@ -1,0 +1,18 @@
+<div class="modal fade show" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: block">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal</h5>
+                <button type="button" class="btn-close" (click)="onNoClick()"></button>
+            </div>
+            <div class="modal-body">
+                Вы хотите удалить продукт {{title}}?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="onNoClick()">Нет</button>
+                <button type="button" class="btn btn-primary" (click)="onYesClick()">Да</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade show"></div>

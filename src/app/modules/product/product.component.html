@@ -1,0 +1,62 @@
+<div *ngIf="!service.spinner">
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand"></a>
+            <div class="d-flex">
+                <button class="btn btn-outline-secondary"
+                        (click)="onInsertClick()">
+                    <i class="bi bi-plus-lg"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">Продукт</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Цена</th>
+            <th scope="col">Ед. изм</th>
+            <th scope="col">Время</th>
+            <th scope="col">Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products$ | async; let idx=index">
+            <th scope="row">{{idx + 1}}</th>
+            <td>{{product?.name}}</td>
+            <td style="max-width: 300px;">{{product?.description}}</td>
+            <td>{{product?.price}}</td>
+            <td>{{product?.unit}}</td>
+            <td>{{product.createAt | date:'short'}}</td>
+            <td>
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        (click)="onEditClick(product)">
+                    <i class="bi bi-pencil-fill"></i>
+                </button>&#160;
+                <button type="button"
+                        class="btn btn-outline-secondary"
+                        (click)="onDeleteClick(product)">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <confirm *ngIf="showConfirm"
+             [title]="selectedProduct?.name"
+             (valueChange)="onConfirmChange($event)">
+    </confirm>
+    <insert-product
+        *ngIf="showPopup"
+        [product]="selectedProduct"
+        (valueChange)="onValueChange($event)">
+    </insert-product>
+</div>
+<div class="d-flex justify-content-center" *ngIf="service.spinner">
+    <div class="spinner-border" style="width: 5rem; height: 5rem;">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>

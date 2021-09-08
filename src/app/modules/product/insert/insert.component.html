@@ -1,0 +1,74 @@
+<div>
+    <div class="modal fade show" tabindex="-1" style="display: block">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{product ? 'Редактировать продукт' : 'Новый продукт' }}</h5>
+                    <button type="button" class="btn-close" (click)="onCloseClick()"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" [formGroup]="productForm" (ngSubmit)="onSaveClick()" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Продукт</label>
+                            <input class="form-control" id="name"
+                                   formControlName="name"
+                                   placeholder="Компютер"
+                                   [class.is-invalid]="productForm.controls['name'].invalid && productForm.controls['name'].touched">
+                            <div class="invalid-feedback"
+                                 *ngIf="productForm.controls['name'].invalid && productForm.controls['name'].touched">
+                                Please provide a valid Name.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="floatingTextarea2">Описание</label>
+                            <textarea class="form-control"
+                                      formControlName="description"
+                                      [class.is-invalid]="productForm.controls['description'].invalid && productForm.controls['description'].touched"
+                                      placeholder="Компьютеры Acer - это высокопроизводительные рабочие станции..."
+                                      id="floatingTextarea2" style="min-height: 100px"></textarea>
+                            <div class="invalid-feedback"
+                                 *ngIf="productForm.controls['description'].invalid && productForm.controls['description'].touched">
+                                Please provide a valid Description.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Цена</label>
+                            <input class="form-control"
+                                   placeholder="5.5"
+                                   type="number"
+                                   id="price"
+                                   [class.is-invalid]="productForm.controls['price'].invalid && productForm.controls['price'].touched"
+                                   formControlName="price">
+                            <div class="invalid-feedback"
+                                 *ngIf="productForm.controls['price'].invalid && productForm.controls['price'].touched">
+                                Please provide a valid price.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Ед. изм</label>
+                            <select class="form-select"
+                                    formControlName="unit"
+                                    [class.is-invalid]="productForm.controls['unit'].invalid && productForm.controls['unit'].touched">
+                                <option value="кг">кг</option>
+                                <option value="шт.">шт.</option>
+                                <option value="рулон">рулон</option>
+                            </select>
+                            <div class="invalid-feedback"
+                                 *ngIf="productForm.controls['unit'].invalid && productForm.controls['unit'].touched">
+                                Please provide a valid Unit.
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" (click)="onCloseClick()">Закрыт</button>
+                            <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Сохранить
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+</div>
